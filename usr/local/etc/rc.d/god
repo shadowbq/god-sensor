@@ -1,0 +1,18 @@
+#!/bin/sh
+#
+
+# PROVIDE: god
+# REQUIRE: DAEMON
+
+. /etc/rc.subr
+
+name="god"
+rcvar=`set_rcvar`
+command="/usr/local/bin/god"
+
+start_cmd='${command} -c /usr/local/etc/god.conf'
+status_cmd='${command} status'
+stop_cmd='${command} terminate'
+
+load_rc_config $name
+run_rc_command "$1"
