@@ -9,10 +9,12 @@
 name="god"
 rcvar=`set_rcvar`
 command="/usr/local/bin/god"
+extra_commands=unload
 
 start_cmd='${command} -c /usr/local/etc/god.conf'
 status_cmd='${command} status'
 stop_cmd='${command} terminate'
+unload_cmd='${command} quit'
 
 load_rc_config $name
 run_rc_command "$1"
