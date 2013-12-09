@@ -3,6 +3,13 @@ god-sensor
 
 FreeBSD monitor process with god
 
+Start God
+`/usr/local/etc/rc.d/god start`
+
+Unloading *without* killing everything
+`/usr/local/etc/rc.d/god unload`
+
+(Note: `/usr/local/etc/rc.d/god stop` kills everyone and everything.. you know dooms-day)
 
 Setting Up FreeBSD rc.conf
 --------------------
