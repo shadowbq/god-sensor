@@ -3,6 +3,15 @@ god-sensor
 
 FreeBSD monitor process with god
 
+Install God
+-------------------
+Pre-req: ruby rubygems
+`sudo gem install god`
+
+http://godrb.com/
+
+Service Wrapper
+--------------------
 Start God
 `/usr/local/etc/rc.d/god start`
 
