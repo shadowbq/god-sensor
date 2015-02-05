@@ -1,0 +1,23 @@
+
+ENABLE_CONTACTS = false
+CONTACT_DEFAULT = 'Shadowbq'
+
+if ENABLE_CONTACTS
+  God::Contacts::Email.defaults do |d| 
+    d.delivery_method = :smtp 
+    d.server_host = 'smtp.gmail.com' 
+    d.server_port = 587 
+    d.server_auth = true 
+    d.server_domain = 'gmail.com' 
+    d.server_user = 'shadowbq@gmail.com' 
+    d.server_password = '******' 
+  end
+
+  God.contact(:email) do |c|
+    c.name = CONTACT_DEFAULT
+    c.group = 'monitor-team'
+    c.to_email = 'shadowbq@gmail.com'
+  end
+end
+
+God.load "/usr/local/etc/god/*.conf"
